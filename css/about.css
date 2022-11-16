@@ -1,0 +1,166 @@
+/* ================= ACHIEVEMENTS ================= */
+.about__achievements {
+    margin-top: 3rem;
+}
+
+.about__achievements-container {
+    display: grid;
+    grid-template-columns: 40% 60%; /*40% for the left and 60% for the right*/
+    gap: 5rem;
+}
+
+.about__achievements-right > p {
+    margin: 1.6rem 0 2.5rem;
+}
+
+.achievements__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.achievement__card {
+    background: var(--color-bg1); /*it creates a box around it*/
+    padding: 1.6rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.achievement__card:hover {
+    background: var(--color-bg2);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);;
+}
+
+.achievement__icon {
+    background: var(--color-danger);
+    padding: 0.6rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2rem; /*to increase the symbol in the icon */
+}
+
+.achievement__card:nth-child(2) /*to change the background color of the icon*/
+.achievement__icon{
+    background: var(--color-success);
+}
+
+.achievement__card:nth-child(3)
+.achievement__icon {
+    background: var(--color-primary);
+}
+.achievement__card p {
+    margin-top: 1rem;
+}  
+
+/* ================= TEAM ================= */
+.team {
+    background: var(--color-bg1); /*to differentiate the area with colors*/
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5); 
+}
+.team__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*positions the image in 4 rows*/
+    gap: 2rem;
+}
+
+.team__member {
+    background: var(--color-bg2); /*creates a box*/
+    padding: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    position: relative; /*displays the hidden socials icon(while writing the "team__member social" code)*/
+    overflow: hidden;
+}
+
+.team__member:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.team__member-image img {
+    filter: saturate(0);
+}
+.team__member:hover img {
+    filter: saturate(1);
+}
+
+.team__member-info * {
+    text-align: center;
+    margin-top: 1.4rem;
+} 
+
+.team__member-info p {
+    color: var(--color-light);
+}
+
+.team__member-socials {
+    position: absolute;
+    top: 50%; /*executes the socials icon to hide*/
+    transform: translateY(-50%); /*moves it to the middle*/
+    right: -100%; /*hides the socials*/ 
+    display: flex;
+    flex-direction: column; /*displays by the side of the right side*/
+    background: var(--color-primary);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+}
+
+.team__member:hover 
+.team__member-socials {
+    right: 0; /*it displays but it starts from the right when u hover*/
+}
+
+.team__member-socials a {
+    padding: 1rem;
+}
+
+
+/* ================= MEDIA QUERIES(TABLETS) ================= */
+@media screen and (max-width:1024px) {
+    .about__achievements {
+        margin-top: 2rem;
+    }
+
+    .about__achievements-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .about__achievements-left {
+        width: 80%;
+        margin: 0 auto;
+    }
+/* ================= TEAM ================= */
+    .team__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .team__member {
+        padding: 1rem;
+    }
+}
+
+
+/* ================= MEDIA QUERIES(MOBILE PHONES/ TABLETS) ================= */
+@media screen and (max-width:600px) {
+    .achievements__cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .team__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .team__member {
+        padding: 0;
+    }
+
+    .team__member p {
+        margin-bottom: 1.5rem;
+    }
+}
